@@ -17,9 +17,6 @@ public class Main {
     @SerializedName("temp_max")
     @Expose
     private double tempMax;
-    @SerializedName("pressure")
-    @Expose
-    private double pressure;
     @SerializedName("humidity")
     @Expose
     private int humidity;
@@ -49,13 +46,7 @@ public class Main {
         this.tempMax = tempMax;
     }
 
-    public double getPressure() {
-        return pressure;
-    }
 
-    public void setPressure(double pressure) {
-        this.pressure = pressure;
-    }
 
 
     public int getHumidity() {

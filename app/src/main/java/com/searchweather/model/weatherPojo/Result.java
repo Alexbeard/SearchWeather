@@ -13,12 +13,6 @@ public class Result {
     @SerializedName("cod")
     @Expose
     private String cod;
-    @SerializedName("message")
-    @Expose
-    private double message;
-    @SerializedName("cnt")
-    @Expose
-    private int cnt;
     @SerializedName("list")
     @Expose
     private List<ListWeather> listWeather = null;
@@ -34,21 +28,6 @@ public class Result {
         this.cod = cod;
     }
 
-    public double getMessage() {
-        return message;
-    }
-
-    public void setMessage(double message) {
-        this.message = message;
-    }
-
-    public int getCnt() {
-        return cnt;
-    }
-
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
-    }
 
     public List<ListWeather> getListWeather() {
         return listWeather;

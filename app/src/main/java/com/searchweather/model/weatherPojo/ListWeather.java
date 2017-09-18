@@ -23,24 +23,9 @@ public class ListWeather {
     @SerializedName("weather")
     @Expose
     private List<Weather> weather = null;
-    @SerializedName("clouds")
-    @Expose
-    private Clouds clouds;
-    @SerializedName("wind")
-    @Expose
-    private Wind wind;
-    @SerializedName("sys")
-    @Expose
-    private Sys sys;
     @SerializedName("dt_txt")
     @Expose
     private String dtTxt;
-    @SerializedName("rain")
-    @Expose
-    private Rain rain;
-    @SerializedName("snow")
-    @Expose
-    private Snow snow;
 
     public String getDt() {
         Date date = new Date(dt * 1000L); // *1000 is to convert seconds to milliseconds
@@ -70,52 +55,12 @@ public class ListWeather {
         this.weather = weather;
     }
 
-    public Clouds getClouds() {
-        return clouds;
-    }
-
-    public void setClouds(Clouds clouds) {
-        this.clouds = clouds;
-    }
-
-    public Wind getWind() {
-        return wind;
-    }
-
-    public void setWind(Wind wind) {
-        this.wind = wind;
-    }
-
-    public Sys getSys() {
-        return sys;
-    }
-
-    public void setSys(Sys sys) {
-        this.sys = sys;
-    }
-
     public String getDtTxt() {
         return dtTxt;
     }
 
     public void setDtTxt(String dtTxt) {
         this.dtTxt = dtTxt;
-    }
-
-    public Rain getRain() {
-        return rain;
-    }
-
-    public void setRain(Rain rain) {
-        this.rain = rain;
-    }
-
-    public Snow getSnow() {
-        return snow;
-    }
-
-    public void setSnow(Snow snow) {
-        this.snow = snow;
     }
 
 }

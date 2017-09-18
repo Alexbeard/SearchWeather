@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Погода</string>
+
+    <string name="fragment_cities_tab_title">Города</string>
+    <string name="fragment_search_cities_tab_title">Поиск</string>
+    <string name="search_hint">Выберите город</string>
+
+
+
+</resources>

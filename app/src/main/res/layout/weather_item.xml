@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/min_temp_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/weather_icon"
+                android:layout_toRightOf="@id/weather_icon"
+                android:layout_marginTop="10dp"
+                tools:text="min_temp = 15"
+                />
+
+            <TextView
+                android:id="@+id/max_temp_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/weather_icon"
+                android:layout_toRightOf="@id/weather_icon"
+                android:layout_below="@id/min_temp_text"
+                android:layout_marginTop="10dp"
+                tools:text="max_temp = 20"
+                />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/weather_icon"
+                android:layout_toRightOf="@id/weather_icon"
+                android:layout_below="@id/max_temp_text"
+                android:layout_marginTop="10dp"
+                tools:text = "Humidity"
+
+                />
+
+            <TextView
+                android:id="@+id/rain_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/weather_icon"
+                android:layout_toRightOf="@id/weather_icon"
+                android:layout_below="@id/humidity"
+                android:layout_marginTop="10dp"
+                tools:text = "description" />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/weather_icon"
+                android:layout_toRightOf="@id/weather_icon"
+                android:layout_below="@id/rain_description"
+                android:layout_marginTop="10dp"
+                tools:text = "00:00:00" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

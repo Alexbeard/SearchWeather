@@ -86,12 +86,7 @@ public class DataProviderImpl implements DataProvider {
 
         try {
             realm = Realm.getDefaultInstance();
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-                    realm.insertOrUpdate(city);
-                }
-            });
+            realm.executeTransaction(realm1 -> realm1.insertOrUpdate(city));
         } finally {
             if (realm != null) {
                 realm.close();

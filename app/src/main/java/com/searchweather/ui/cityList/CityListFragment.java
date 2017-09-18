@@ -18,7 +18,6 @@ import com.searchweather.ui.detail.DetailActivity;
 import java.util.List;
 
 import io.realm.Realm;
-import io.realm.RealmChangeListener;
 import io.realm.Sort;
 
 /**
@@ -78,13 +77,9 @@ public class CityListFragment extends Fragment implements CityListView{
         List<City> cities = realm.where(City.class).findAllSorted("name", Sort.ASCENDING);
         adapter.populateCities(cities);
 
-
-        realm.addChangeListener(new RealmChangeListener<Realm>() {
-            @Override
-            public void onChange(Realm realm) {
-                List<City> cities = realm.where(City.class).findAllSorted("name", Sort.ASCENDING);
-                adapter.populateCities(cities);
-            }
+        realm.addChangeListener(realm1 -> {
+            List<City> cities1 = realm1.where(City.class).findAllSorted("name", Sort.ASCENDING);
+            adapter.populateCities(cities1);
         });
 
     }

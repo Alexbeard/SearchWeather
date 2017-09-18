@@ -7,10 +7,10 @@ import io.realm.annotations.PrimaryKey;
  * Created by Aleksandr Litvinchuck on 17.09.2017.
  */
 
-public class City extends RealmObject{
+public class City extends RealmObject {
 
     @PrimaryKey
-     String name;
+    String name;
 
     public String getName() {
         return name;

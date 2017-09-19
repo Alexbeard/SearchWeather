@@ -71,17 +71,19 @@ public class CityListFragment extends Fragment implements CityListView{
 
     private void initRealm() {
 
-
         realm = Realm.getDefaultInstance();
 
-        List<City> cities = realm.where(City.class).findAllSorted("name", Sort.ASCENDING);
-        adapter.populateCities(cities);
+        updateAdapter(realm);
 
         realm.addChangeListener(realm1 -> {
-            List<City> cities1 = realm1.where(City.class).findAllSorted("name", Sort.ASCENDING);
-            adapter.populateCities(cities1);
+            updateAdapter(realm1);
         });
 
+    }
+
+    private void updateAdapter(Realm realm1) {
+        List<City> cities1 = realm1.where(City.class).findAllSorted("name", Sort.ASCENDING);
+        adapter.populateCities(cities1);
     }
 
 }

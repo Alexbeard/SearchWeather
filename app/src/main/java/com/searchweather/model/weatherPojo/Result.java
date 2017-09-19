@@ -10,23 +10,13 @@ import java.util.List;
  */
 public class Result {
 
-    @SerializedName("cod")
-    @Expose
-    private String cod;
+
     @SerializedName("list")
     @Expose
     private List<ListWeather> listWeather = null;
     @SerializedName("city")
     @Expose
     private City city;
-
-    public String getCod() {
-        return cod;
-    }
-
-    public void setCod(String cod) {
-        this.cod = cod;
-    }
 
 
     public List<ListWeather> getListWeather() {

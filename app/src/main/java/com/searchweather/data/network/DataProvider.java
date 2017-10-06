@@ -3,6 +3,8 @@ package com.searchweather.data.network;
 import com.searchweather.model.realmPojo.City;
 import com.searchweather.model.weatherPojo.Result;
 
+import io.realm.RealmResults;
+import rx.Observable;
 import rx.Single;
 
 /**
@@ -17,5 +19,6 @@ public interface DataProvider {
 
     void deleteCity(City city);
 
+    Observable<RealmResults<City>> getCities ();
 
 }

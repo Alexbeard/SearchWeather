@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         binding.viewpager.setAdapter(adapter);
         binding.tabs.setupWithViewPager(binding.viewpager);
 
+
     }
 
 

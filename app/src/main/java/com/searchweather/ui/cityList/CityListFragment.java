@@ -18,7 +18,6 @@ import com.searchweather.ui.detail.DetailActivity;
 import java.util.List;
 
 import io.realm.Realm;
-import io.realm.Sort;
 
 /**
  * Created by Aleksandr Litvinchuck on 15.09.2017.
@@ -36,10 +35,8 @@ public class CityListFragment extends Fragment implements CityListView{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cities, container, false);
 
-        presenter = new CityListPresenterImpl(this);
-
         initList();
-        initRealm();
+        presenter = new CityListPresenterImpl(this);
 
         return binding.getRoot();
     }
@@ -68,22 +65,8 @@ public class CityListFragment extends Fragment implements CityListView{
     }
 
 
-
-    private void initRealm() {
-
-        realm = Realm.getDefaultInstance();
-
-        updateAdapter(realm);
-
-        realm.addChangeListener(realm1 -> {
-            updateAdapter(realm1);
-        });
-
-    }
-
-    private void updateAdapter(Realm realm) {
-        List<City> cities = realm.where(City.class).findAllSorted("name", Sort.ASCENDING);
+    @Override
+    public void updateCityList(List<City> cities) {
         adapter.populateCities(cities);
     }
-
 }

@@ -17,6 +17,9 @@ public class CityListPresenterImpl implements CityListPresenter {
     public CityListPresenterImpl(CityListView view) {
         this.view = view;
         dataProvider = DataProviderImpl.getInstance();
+        dataProvider.getCities().subscribe(
+                cities -> view.updateCityList(cities)
+        );
     }
 
 

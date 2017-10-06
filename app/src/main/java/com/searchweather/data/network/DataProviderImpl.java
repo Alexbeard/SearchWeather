@@ -16,6 +16,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 import rx.Single;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -60,6 +61,18 @@ public class DataProviderImpl implements DataProvider {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
+    @Override
+    public Observable<RealmResults<City>> getCities() {
+        realm = Realm.getDefaultInstance();
+
+        Observable<RealmResults<City>> cities;
+
+        return cities = realm.where(City.class)
+                .findAllSorted("name", Sort.ASCENDING)
+                .asObservable()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 
     private OpenWeatherApi provideWeatherClient() {
         return new Retrofit.Builder()
@@ -111,4 +124,6 @@ public class DataProviderImpl implements DataProvider {
         }
 
     }
+
+
 }
